@@ -6,4 +6,4 @@
   package = "@netlify/plugin-nextjs"
 
 [build.environment]
-  NEXT_PUBLIC_APP_URL = "https://mapranx.netlify.app"
+  NEXT_PUBLIC_APP_URL = "https://mapranx.com"

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { loadStripe } from '@stripe/stripe-js'
 
 const plans = [
@@ -114,9 +115,9 @@ export default function PricingPage() {
               </div>
               <span className="font-bold text-xl">MapRanx</span>
             </div>
-            <a href="/" className="text-gray-600 hover:text-gray-900 font-medium">
+            <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium">
               ← Back to Home
-            </a>
+            </Link>
           </div>
         </div>
       </nav>

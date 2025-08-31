@@ -47,7 +47,7 @@ export default function SuccessPage() {
 
             <div className="space-y-4">
               <div className="bg-purple-50 rounded-lg p-4">
-                <h3 className="font-semibold text-gray-900 mb-2">What's next?</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">What&apos;s next?</h3>
                 <ul className="text-left text-sm text-gray-600 space-y-2">
                   <li className="flex items-start">
                     <span className="text-purple-600 mr-2">✓</span>
@@ -98,7 +98,7 @@ export default function SuccessPage() {
             </h1>
             
             <p className="text-gray-600 mb-8">
-              We couldn't verify your payment. Please contact support if you were charged.
+              We couldn&apos;t verify your payment. Please contact support if you were charged.
             </p>
 
             <div className="space-y-3">

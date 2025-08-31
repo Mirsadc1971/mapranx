@@ -42,8 +42,8 @@ export default function SignupPage() {
       setTimeout(() => {
         router.push('/dashboard');
       }, 2000);
-    } catch (error: any) {
-      setError(error.message || 'An error occurred during signup');
+    } catch (error) {
+      setError((error as Error).message || 'An error occurred during signup');
     } finally {
       setLoading(false);
     }

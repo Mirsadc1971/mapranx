@@ -28,8 +28,8 @@ export default function LoginPage() {
 
       // Redirect to dashboard after successful login
       router.push('/dashboard');
-    } catch (error: any) {
-      setError(error.message || 'An error occurred during login');
+    } catch (error) {
+      setError((error as Error).message || 'An error occurred during login');
     } finally {
       setLoading(false);
     }

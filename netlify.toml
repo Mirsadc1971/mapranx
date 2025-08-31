@@ -8,3 +8,4 @@
 [build.environment]
   NEXT_PUBLIC_APP_URL = "https://mapranx.com"
   NODE_VERSION = "18"
+# Force deploy Sat, Aug 30, 2025 10:48:21 PM

@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/client';
 
 export default function TestSupabase() {
   const [status, setStatus] = useState<string>('Testing connection...');
-  const [details, setDetails] = useState<any>({});
+  const [details, setDetails] = useState<Record<string, string>>({});
   
   useEffect(() => {
     const testConnection = async () => {
@@ -48,9 +48,9 @@ export default function TestSupabase() {
           setStatus('Connection issues detected');
         }
         
-      } catch (error: any) {
+      } catch (error) {
         setStatus('Connection failed');
-        setDetails(prev => ({...prev, error: error.message}));
+        setDetails(prev => ({...prev, error: error instanceof Error ? error.message : String(error)}));
       }
     };
     

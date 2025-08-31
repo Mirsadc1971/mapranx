@@ -1,11 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import DashboardLayout from '@/components/DashboardLayout';
-import Link from 'next/link';
 
 export default function BillingPage() {
-  const [selectedPlan, setSelectedPlan] = useState('professional');
   
   const currentPlan = {
     name: 'Professional',

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function Home() {
   return (
@@ -7,12 +8,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-600 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">MR</span>
-              </div>
-              <span className="font-bold text-2xl">MapRanx</span>
-            </div>
+            <Logo size="md" />
             <div className="flex items-center gap-6">
               <Link href="/demo" className="text-gray-600 hover:text-gray-900 font-medium hidden sm:block">
                 Book a Demo
@@ -44,9 +40,9 @@ export default function Home() {
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-            Self-Service Rank Tracking
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-              Software, Not Agency
+            It's MapRan<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 font-black transform inline-block -skew-x-12">X</span>
+            <span className="block text-3xl sm:text-4xl mt-4 text-gray-700">
+              with an X — Not MapRanks Agency
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
@@ -627,6 +623,48 @@ export default function Home() {
           <div className="border-t border-gray-800 pt-8 text-center text-sm">
             <p>© 2024 MapRanx. All rights reserved.</p>
           </div>
+        </div>
+      </footer>
+      {/* Footer with X Branding */}
+      <footer className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-blue-400 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-xl">MR</span>
+              </div>
+              <div className="font-bold text-3xl flex items-baseline">
+                <span className="text-white">MapRan</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400 font-black transform -skew-x-12 text-4xl">X</span>
+              </div>
+            </div>
+            <p className="text-lg text-gray-300 mb-2">
+              It's MapRan<span className="font-black text-purple-400">X</span> — with an X
+            </p>
+            <p className="text-sm text-gray-400">
+              DIY Local SEO Software. Not an expensive agency.
+            </p>
+          </div>
+          
+          <div className="flex justify-center gap-6 mb-8">
+            <Link href="/mapranks-alternative" className="text-gray-400 hover:text-white">
+              MapRanks Alternative
+            </Link>
+            <Link href="/pricing" className="text-gray-400 hover:text-white">
+              Pricing
+            </Link>
+            <Link href="/auth-real" className="text-gray-400 hover:text-white">
+              Login
+            </Link>
+            <Link href="/dashboard" className="text-gray-400 hover:text-white">
+              Dashboard
+            </Link>
+          </div>
+          
+          <p className="text-sm text-gray-500">
+            © 2024 MapRanX. Not affiliated with MapRanks or any agency. 
+            We provide self-service software, not managed services.
+          </p>
         </div>
       </footer>
     </div>

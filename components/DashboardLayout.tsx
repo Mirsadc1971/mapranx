@@ -62,7 +62,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
               <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">MR</span>
               </div>
-              <span className="font-bold text-xl">MapRanx</span>
+              <div className="font-bold text-xl flex items-baseline">
+                <span>MapRan</span>
+                <span className="text-purple-600 font-black transform -skew-x-12">X</span>
+              </div>
             </div>
           </div>
 

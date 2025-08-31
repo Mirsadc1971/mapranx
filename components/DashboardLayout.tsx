@@ -14,8 +14,10 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
   const navigation = [
     { name: 'Dashboard', href: '/dashboard', icon: '📊' },
-    { name: 'Heatmaps', href: '/dashboard/heatmaps', icon: '🗺️' },
+    { name: 'New Scan', href: '/dashboard/scan', icon: '🔍' },
+    { name: 'Locations', href: '/dashboard/locations', icon: '📍' },
     { name: 'Reports', href: '/dashboard/reports', icon: '📄' },
+    { name: 'Heatmaps', href: '/dashboard/heatmaps', icon: '🗺️' },
     { name: 'API Monitor', href: '/dashboard/api-monitor', icon: '🔌' },
     { name: 'Billing', href: '/dashboard/billing', icon: '💳' },
     { name: 'Settings', href: '/dashboard/settings', icon: '⚙️' },
@@ -107,9 +109,9 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         {/* Quick Actions - Bottom of Sidebar */}
         {sidebarOpen && (
           <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
-            <button className="w-full px-4 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-200">
+            <Link href="/dashboard/scan" className="block w-full px-4 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium hover:shadow-lg transition-all duration-200 text-center">
               + New Scan
-            </button>
+            </Link>
           </div>
         )}
       </aside>

@@ -1,26 +1,43 @@
 import { NextRequest, NextResponse } from 'next/server'
+import Stripe from 'stripe'
 
-export const runtime = 'nodejs'
-
-export async function GET(request: NextRequest) {
-  return NextResponse.json({ 
-    message: 'Checkout API endpoint',
-    status: 'ready'
-  })
-}
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: '2024-12-18.acacia',
+})
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json()
+    const { priceId, customerId, mode } = await request.json()
     
-    return NextResponse.json({ 
-      success: true,
-      received: body
+    // Determine checkout mode - 'payment' for one-time, 'subscription' for recurring
+    const checkoutMode = mode || 'subscription'
+    
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price: priceId,
+          quantity: 1,
+        },
+      ],
+      mode: checkoutMode,
+      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/pricing`,
+      customer: customerId || undefined,
+      allow_promotion_codes: true,
+      billing_address_collection: 'auto',
+      metadata: {
+        priceId,
+        mode: checkoutMode,
+      },
     })
-  } catch (error) {
+
+    return NextResponse.json({ sessionId: session.id })
+  } catch (error: any) {
+    console.error('Stripe checkout error:', error)
     return NextResponse.json(
-      { error: 'Invalid request body' },
-      { status: 400 }
+      { error: error.message || 'Failed to create checkout session' },
+      { status: 500 }
     )
   }
 }

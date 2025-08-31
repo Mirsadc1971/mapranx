@@ -125,11 +125,15 @@ export default function PricingPage() {
       {/* Pricing Header */}
       <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 rounded-full px-6 py-2 mb-6">
+            <span className="text-xl">💰</span>
+            <span className="text-lg font-bold text-green-700">95% Cheaper Than Agencies</span>
+          </div>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Choose Your MapRanx Plan
+            DIY Software Pricing
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Start with a trial or jump into a plan that fits your needs
+            Agencies charge $500-2000/month. We charge 95% less for better results.
           </p>
         </div>
       </section>

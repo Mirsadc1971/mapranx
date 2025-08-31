@@ -31,24 +31,30 @@ export default function Home() {
       {/* Hero Section with $8.77 Feature */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto text-center">
+          {/* Software vs Agency Badge */}
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-blue-100 rounded-full px-6 py-2 mb-4">
+            <span className="text-2xl">💻</span>
+            <span className="text-lg font-bold text-green-700">DIY Software - Not an Expensive Agency!</span>
+          </div>
+          
           {/* $8.77 Badge */}
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full px-6 py-2 mb-8">
             <span className="text-2xl">🚀</span>
-            <span className="text-lg font-bold text-purple-700">Start for just $8.77 - 100 scan points included!</span>
+            <span className="text-lg font-bold text-purple-700">Start for just $8.77 - 100x Cheaper than Agencies!</span>
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6">
-            The Most Accurate & Reliable
+            Self-Service Rank Tracking
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-              Local Rank Tracker
+              Software, Not Agency
             </span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto">
-            Track Local SERP and Map Rankings Across Any Location—With Zero Guesswork
+            Why Pay $500+/Month for an Agency? Get Instant Results with Our Automated Software
           </p>
           <p className="text-lg text-gray-600 mb-10 max-w-3xl mx-auto">
-            MapRanx is the go-to local rank tracker tool for SEO pros, agencies, and businesses that need precise, 
-            location-based ranking data—whether you&apos;re tracking organic, Maps, or blended results.
+            MapRanx is DIY local rank tracking software that puts YOU in control. No meetings, no contracts, 
+            no waiting for reports. Get instant ranking data anytime—for 100x less than traditional agencies.
           </p>
           
           {/* Main CTA with $8.77 */}
@@ -107,6 +113,109 @@ export default function Home() {
             <span className="text-gray-600">Moz</span>
             <span className="text-gray-600">Ahrefs Blog</span>
             <span className="text-gray-600">Local SEO Guide</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Software vs Agency Comparison */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-purple-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4">
+            Why Choose Software Over Agencies?
+          </h2>
+          <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+            See why 10,000+ businesses switched from expensive agencies to MapRanx
+          </p>
+          
+          {/* Comparison Table */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+              <div className="grid grid-cols-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold">Feature</h3>
+                </div>
+                <div className="p-6 text-center border-l border-white/20">
+                  <h3 className="text-xl font-bold">MapRanx Software</h3>
+                  <p className="text-sm opacity-90 mt-1">DIY Platform</p>
+                </div>
+                <div className="p-6 text-center border-l border-white/20">
+                  <h3 className="text-xl font-bold">Traditional Agencies</h3>
+                  <p className="text-sm opacity-90 mt-1">(Like MapRanks)</p>
+                </div>
+              </div>
+              
+              <div className="divide-y divide-gray-200">
+                <div className="grid grid-cols-3">
+                  <div className="p-6 font-medium text-gray-900">Starting Price</div>
+                  <div className="p-6 text-center bg-green-50">
+                    <span className="text-2xl font-bold text-green-600">$8.77</span>
+                    <p className="text-sm text-gray-600">One-time trial</p>
+                  </div>
+                  <div className="p-6 text-center bg-red-50">
+                    <span className="text-2xl font-bold text-red-600">$500+</span>
+                    <p className="text-sm text-gray-600">Per month minimum</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3">
+                  <div className="p-6 font-medium text-gray-900">Results Speed</div>
+                  <div className="p-6 text-center bg-green-50">
+                    <span className="text-green-600 font-bold">Instant</span>
+                    <p className="text-sm text-gray-600">Real-time scanning</p>
+                  </div>
+                  <div className="p-6 text-center bg-red-50">
+                    <span className="text-red-600 font-bold">3-7 Days</span>
+                    <p className="text-sm text-gray-600">Wait for reports</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3">
+                  <div className="p-6 font-medium text-gray-900">Control</div>
+                  <div className="p-6 text-center bg-green-50">
+                    <span className="text-green-600 font-bold">100% Yours</span>
+                    <p className="text-sm text-gray-600">Run unlimited scans</p>
+                  </div>
+                  <div className="p-6 text-center bg-red-50">
+                    <span className="text-red-600 font-bold">Limited</span>
+                    <p className="text-sm text-gray-600">Request changes</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3">
+                  <div className="p-6 font-medium text-gray-900">Contracts</div>
+                  <div className="p-6 text-center bg-green-50">
+                    <span className="text-green-600 font-bold">No Contracts</span>
+                    <p className="text-sm text-gray-600">Cancel anytime</p>
+                  </div>
+                  <div className="p-6 text-center bg-red-50">
+                    <span className="text-red-600 font-bold">6-12 Months</span>
+                    <p className="text-sm text-gray-600">Locked in</p>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-3">
+                  <div className="p-6 font-medium text-gray-900">Meetings Required</div>
+                  <div className="p-6 text-center bg-green-50">
+                    <span className="text-green-600 font-bold">Never</span>
+                    <p className="text-sm text-gray-600">Self-service</p>
+                  </div>
+                  <div className="p-6 text-center bg-red-50">
+                    <span className="text-red-600 font-bold">Weekly/Monthly</span>
+                    <p className="text-sm text-gray-600">Time consuming</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <Link href="/pricing" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-bold text-xl hover:shadow-xl transition-all duration-200">
+              <span>Switch to Software - Save 95%</span>
+              <span className="text-2xl">→</span>
+            </Link>
+            <p className="text-sm text-gray-500 mt-4">
+              * MapRanx is not affiliated with MapRanks or any other agency. We provide DIY software, not agency services.
+            </p>
           </div>
         </div>
       </section>

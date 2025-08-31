@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import DashboardLayout from '@/components/DashboardLayout';
-import Link from 'next/link';
 
 export default function ReportsPage() {
   const [reportType, setReportType] = useState('ranking');

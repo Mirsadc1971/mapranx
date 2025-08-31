@@ -39,12 +39,6 @@ export default function HeatmapsPage() {
     'property managers near me',
   ];
 
-  const getRankColor = (rank: number) => {
-    if (rank <= 3) return 'from-green-500 to-green-600';
-    if (rank <= 5) return 'from-yellow-500 to-yellow-600';
-    if (rank <= 10) return 'from-orange-500 to-orange-600';
-    return 'from-red-500 to-red-600';
-  };
 
   const getRankEmoji = (rank: number) => {
     if (rank <= 3) return '🏆';
@@ -157,7 +151,7 @@ export default function HeatmapsPage() {
         {viewMode === 'grid' && (
           <div className="bg-white rounded-xl shadow-sm p-6">
             <h3 className="font-semibold text-gray-900 mb-6">
-              Rankings for "{selectedKeyword}" across Chicago Metro
+              Rankings for &quot;{selectedKeyword}&quot; across Chicago Metro
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
               {Object.entries(heatmapData).map(([location, data]) => (

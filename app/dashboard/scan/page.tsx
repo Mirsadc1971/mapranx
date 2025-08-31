@@ -10,7 +10,17 @@ export default function ScanPage() {
   const [keywords, setKeywords] = useState('');
   const [locations, setLocations] = useState('');
   const [scanning, setScanning] = useState(false);
-  const [scanResults, setScanResults] = useState<any>(null);
+  const [scanResults, setScanResults] = useState<{
+    businessName: string;
+    totalScans: number;
+    pointsUsed: number;
+    results: Array<{
+      keyword: string;
+      location: string;
+      position: number;
+      mapPack: boolean;
+    }>;
+  } | null>(null);
 
   const handleScan = async () => {
     setScanning(true);
@@ -188,7 +198,7 @@ export default function ScanPage() {
               </div>
               
               <div className="space-y-3">
-                {scanResults.results.map((result: any, index: number) => (
+                {scanResults.results.map((result, index) => (
                   <div key={index} className="flex justify-between items-center p-4 border border-gray-200 rounded-lg">
                     <div>
                       <p className="font-semibold text-gray-900">{result.keyword}</p>

@@ -2,14 +2,13 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { signIn } from '@/app/actions/auth';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,36 +16,15 @@ export default function LoginPage() {
     setError('');
 
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-        credentials: 'same-origin',
-      });
-
-      let data;
-      const contentType = response.headers.get('content-type');
+      const result = await signIn(email, password);
       
-      if (contentType && contentType.includes('application/json')) {
-        data = await response.json();
-      } else {
-        // If not JSON, likely an error page
-        const text = await response.text();
-        console.error('Non-JSON response:', text);
-        throw new Error('Server error - please try again');
+      if (result?.error) {
+        setError(result.error);
+        setLoading(false);
       }
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Login failed');
-      }
-
-      // Redirect to dashboard after successful login
-      router.push('/dashboard');
+      // If no error, the server action will redirect to dashboard
     } catch (error) {
-      setError((error as Error).message || 'An error occurred during login');
-    } finally {
+      setError('An error occurred during login');
       setLoading(false);
     }
   };

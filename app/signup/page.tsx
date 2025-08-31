@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { signUp } from '@/app/actions/auth';
 
 export default function SignupPage() {
   const [email, setEmail] = useState('');
@@ -12,7 +12,6 @@ export default function SignupPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
-  const router = useRouter();
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -20,45 +19,17 @@ export default function SignupPage() {
     setError('');
 
     try {
-      const response = await fetch('/api/auth/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          email, 
-          password, 
-          fullName, 
-          companyName 
-        }),
-        credentials: 'same-origin',
-      });
-
-      let data;
-      const contentType = response.headers.get('content-type');
+      const result = await signUp(email, password, fullName, companyName);
       
-      if (contentType && contentType.includes('application/json')) {
-        data = await response.json();
+      if (result?.error) {
+        setError(result.error);
+        setLoading(false);
       } else {
-        // If not JSON, likely an error page
-        const text = await response.text();
-        console.error('Non-JSON response:', text);
-        throw new Error('Server error - please try again');
+        setSuccess(true);
+        // Server action will redirect to dashboard
       }
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Signup failed');
-      }
-
-      setSuccess(true);
-      
-      // Redirect to dashboard after 2 seconds
-      setTimeout(() => {
-        router.push('/dashboard');
-      }, 2000);
     } catch (error) {
-      setError((error as Error).message || 'An error occurred during signup');
-    } finally {
+      setError('An error occurred during signup');
       setLoading(false);
     }
   };

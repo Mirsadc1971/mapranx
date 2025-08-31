@@ -1,0 +1,10 @@
+{
+  "deployed": true,
+  "version": "2.0.0",
+  "timestamp": "2025-08-30T22:48:00Z",
+  "features": {
+    "homepage": "redesigned with $8.77 trial",
+    "pricing": "4 tiers configured",
+    "stripe": "live keys configured"
+  }
+}

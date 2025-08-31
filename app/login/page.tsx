@@ -23,9 +23,20 @@ export default function LoginPage() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
+        credentials: 'same-origin',
       });
 
-      const data = await response.json();
+      let data;
+      const contentType = response.headers.get('content-type');
+      
+      if (contentType && contentType.includes('application/json')) {
+        data = await response.json();
+      } else {
+        // If not JSON, likely an error page
+        const text = await response.text();
+        console.error('Non-JSON response:', text);
+        throw new Error('Server error - please try again');
+      }
 
       if (!response.ok) {
         throw new Error(data.error || 'Login failed');

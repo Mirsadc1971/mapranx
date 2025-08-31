@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Private files - NEVER commit these
+STRIPE_KEYS.md
+*_PRIVATE.md
+*_SECRET.md

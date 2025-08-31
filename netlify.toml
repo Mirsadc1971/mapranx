@@ -8,4 +8,16 @@
 [build.environment]
   NEXT_PUBLIC_APP_URL = "https://mapranx.com"
   NODE_VERSION = "18"
-# Force deploy Sat, Aug 30, 2025 10:48:21 PM
+  NEXT_RUNTIME = "nodejs18.x"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
